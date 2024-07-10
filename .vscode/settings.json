@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "new": "cpp",
+        "stack": "cpp",
+        "deque": "cpp",
+        "queue": "cpp"
+    }
+}
