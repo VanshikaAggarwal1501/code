@@ -36,3 +36,23 @@ void levelordertraversal(Node* root){
         }
     }
 }
+Node* CreateBST(int inorder[], int s, int size, int e){
+    if(s>e){
+        return NULL;
+    }
+    int mid= s+(e-s)/2;
+    
+    Node* root= new Node(inorder[mid]);
+    root-> left = CreateBST(inorder, s, size, mid-1);
+    root-> right= CreateBST(inorder, mid+1, size, e);
+    return root;
+
+}
+int main(){
+    int inorder[]= {10,20,30,40,50,60,70};
+    int size= 7;
+    int s=0; 
+    int e= size-1;
+    Node* root= CreateBST(inorder, s, size, e);
+    levelordertraversal(root);
+}
