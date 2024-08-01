@@ -214,18 +214,40 @@ int kthsmallest(Node* root, int k){
     }
         // is right a possible answer
         int right= kthsmallest(root-> right, k);
-        return right; 
-
+        return right;
 }
-void CreateBSTfromInorder(int inorder[], int s,int e){
-    if(s>=e){
+void printLL(Node* &head){
+    if(head== NULL){
         return;
     }
-    
-    
+    Node* temp= head;
+    while(temp!= NULL){
+        cout<< temp-> data<< "->";
+        temp= temp-> right;
+    }
 }
+void conversiontoDLL(Node* root, Node* &head){
+    if(root== NULL){
+        return;
+    }
+    // right subtree to DLL
+    conversiontoDLL(root-> right, head);
+    // current node to DLL
+    root-> right= head;
+    if(head!= NULL){
+        head-> left= root;
+    }
+    head= root;
+    // left subtree to DLL
+    conversiontoDLL(root-> left, head);
+
+
+
+}
+
 int main(){
     Node* root= NULL;
+    Node* head= NULL;
     takingInput(root);
     cout<< "level order traversal is: "<< endl;
     levelorder(root);
