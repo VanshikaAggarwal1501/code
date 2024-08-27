@@ -1,57 +1,45 @@
-// check whether a CBT is Max heap or not
 #include<iostream>
+#include<queue>
 using namespace std;
 class Node{
     public:
     int data;
     Node* left;
     Node* right;
-    Node(int val){
-        this-> data= val;
-        this-> left= NULL;
-        this-> right= NULL;
-    }
 };
 class Valid{
     public:
     int maxVal;
-    bool isHeap;
-    Valid(){
-
-    }
+    bool IsHeap;
 };
 Valid CheckMaxHeap(Node* root){
-    // base cases
     if(root== NULL){
         Valid temp;
         temp.maxVal= INT_MIN;
-        temp.isHeap= true;
+        temp.IsHeap= true;
         return temp;
     }
     if(root-> left== NULL && root-> right== NULL){
-        // leaf node
         Valid temp;
         temp.maxVal= root-> data;
-        temp.isHeap= true;
+        temp.IsHeap= true;
         return temp;
-
     }
-    // recursion 
     Valid left= CheckMaxHeap(root-> left);
     Valid right= CheckMaxHeap(root-> right);
-    if(root-> data> left.maxVal && root-> data> right.maxVal && left.isHeap && right.isHeap){
+    if(root-> data> left.maxVal && root-> data> right.maxVal && left.IsHeap && right.IsHeap){
         Valid temp;
         temp.maxVal= root-> data;
-        temp.isHeap= true;
+        temp.IsHeap= true;
         return temp;
     }
     else {
         Valid temp;
         temp.maxVal= max(root-> data, max(left.maxVal, right.maxVal));
-        temp.isHeap= false;
+        temp.IsHeap= false;
         return temp;
     }
 }
 int main(){
-
+    Node* root= NULL;
 }
