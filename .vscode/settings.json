@@ -6,6 +6,8 @@
         "stack": "cpp",
         "deque": "cpp",
         "queue": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ostream": "cpp",
+        "unordered_map": "cpp"
     }
 }
