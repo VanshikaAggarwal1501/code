@@ -1,9 +1,10 @@
 #include<iostream>
-#include<queue>
 #include<unordered_map>
+#include<queue>
 using namespace std;
 class Graph{
     public: 
+    unordered_map<int,bool>visited;
     unordered_map<int, list<pair<int,int>>>adjList;
     void addEdge(int u, int v, int wt, bool dir){
         if(dir==1){
@@ -26,7 +27,6 @@ class Graph{
         }
     }
     void BFS(int src){
-        unordered_map<int, bool>visited;
         queue<int>q;
         q.push(src);
         visited[src]= true;
@@ -52,6 +52,7 @@ class Graph{
             }
         }
     }
+    
 };
 int main(){
 
