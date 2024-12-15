@@ -21,9 +21,14 @@ class B{
 class C: public A, public B{
     public:
     int maths;
+    C() {
+        maths= 71;
+    }
 
 };
 int main(){
+    cout<< "Vanshika Aggarwal"<< endl;
+    cout<< "Roll Number: 22001003138" << endl;
     C obj;
     cout<<  obj.B::chemistry<< " "<< obj.maths<< endl;
     // scope resolution operator is used to remove this ambiguity

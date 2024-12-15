@@ -26,17 +26,11 @@ class Animal{
         this->weight= weight;
         cout<< "parameterised constructor called"<< endl;
     }
-    // copy constructor
-    // copy constructor is passed by reference inside the first constructor
-    Animal(Animal& obj){
-        this->age = obj.age;
-        this->weight = obj.weight;
-        cout<< "copy constructor called" << endl;
-    }
 };
 int main(){
+    cout<< "Vanshika Aggarwal"<< endl;
+    cout<< "Roll Number: 22001003138" << endl;
     Animal b;
     Animal* a= new Animal(12,56);
-    //ek object ko dusre me copy krne ka tarika
-    Animal c= b;
+ 
 }
