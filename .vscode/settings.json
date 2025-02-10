@@ -9,6 +9,8 @@
         "utility": "cpp",
         "ostream": "cpp",
         "unordered_map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "cstdlib": "cpp",
+        "xhash": "cpp"
     }
 }
