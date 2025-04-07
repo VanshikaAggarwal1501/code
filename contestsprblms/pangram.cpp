@@ -7,7 +7,9 @@ int main(){
     string str;
     cin>> str;
     for(int i=0; i<n; i++){
-        str[i]= str[i] + 'a'- 'A';
+        if(str[i]>= 'A' && str[i]<= 'Z'){
+            str[i]= str[i] + ('a'- 'A');
+        }
     }
     unordered_map<char,int>mp;
     for(int i=0; i<n; i++){
